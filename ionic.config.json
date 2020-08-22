@@ -1,5 +1,7 @@
 {
   "name": "ionic-payment-card-validate",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

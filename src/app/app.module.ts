@@ -8,9 +8,10 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+// import { CreditCardDirective } from './directives/credit-card.directive';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent],//CreditCardDirective
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [

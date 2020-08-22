@@ -1,20 +1,88 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar color="primary">
     <ion-title>
       Blank
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="top-page">
+    <h5>Your Balance</h5>
+    <div class="account_balance">
+      <div class="wallet-icon">
+        <img src="assets/icon/wallet.png" alt="">
+      </div>
+      <div class="balance">
+        <h3>
+          $950.96
+        </h3>
+      </div>
+    </div>    
+  </div>
+  <div>
+  </div>
+  <div class="form-wrap">
+    <div class="card">
+      <div class="bank-name" title="BestBank">BestBank</div>
+      <div class="chip">
+          <div class="side left"></div>
+          <div class="side right"></div>
+          <div class="vertical top"></div>
+          <div class="vertical bottom"></div>
+      </div>
+      <div class="data">
+          <div style="height: 27px;" class="pan">{{cardNumber}}</div>
+          <!-- <div class="pan">4123 4567 8910 1112</div> -->
+          <div style="height: 7px;;" class="first-digits">
+          <img src="assets/icon/{{cardlogo}}" style="height: 35px;float: right;margin-right: 10px;margin-bottom: -20px;" alt="">
+          </div>
+          <div class="exp-date-wrapper">
+              <div class="left-label">EXPIRES</div>
+              <div class="exp-date">
+                  <div class="upper-labels">MONTH/YEAR</div>
+                  <div class="date" title="01/17">01/17</div>
+              </div>
+          </div>
+          <div style="height: 22px;" class="name-on-card">{{cardHolder}}</div>
+      </div>
+      <div class="lines-down"></div>
+      <div class="lines-up"></div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    </div>
+
+    <div class="form">
+      <ion-item>
+        <ion-label position="stacked">CARD HOLDER NAME</ion-label>
+        <ion-input [(ngModel)]="cardHolder"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">CARD NUMBER</ion-label>
+        <ion-input (ionBlur)="cardNumberBlurred()" maxlength="19" type="tel" credit-card [(ngModel)]="cardNumber"></ion-input>
+        <!-- <ion-icon name="close-circle" slot="end"></ion-icon> -->
+        <img slot="end" src="assets/icon/{{cardlogo}}" style="height: 20px;float: right;margin-right: 10px;" alt="">
+      </ion-item>
+
+      <ion-row>
+        <ion-col size="8">
+          <ion-item>
+            <ion-label position="stacked">EXPIRATION DATE</ion-label>
+            <ion-input [(ngModel)]="cardExpiration"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item>
+            <ion-label position="stacked">CVV</ion-label>
+            <ion-input [(ngModel)]="cardCVV"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+     
+
+      <ion-button expand="full" color="primary">Pay no</ion-button>
+
+
+    </div>
   </div>
 </ion-content>
